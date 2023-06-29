@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  min-height: 100vh;
+  transition: .5s;
+}
+
+.container_dark {
+  transition: .5s;
+  background-color: #1e1f25;
+  color: #fafafa;
+}

@@ -1,0 +1,56 @@
+.aboutBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 70%;
+  height: 100vh;
+  @media screen and (max-width: 600px) {
+    justify-content: center;
+    gap: 50px;
+    width: 80%;
+  }
+}
+
+.about {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.about__header {
+  font-size: 48px;
+  font-weight: 500;
+  @media screen and (max-width: 600px) {
+    font-size: 32px;
+  }
+}
+
+.about__text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  font-size: 24px;
+  & > span {
+    display: block;
+    width: 100%;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 18px;
+  }
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.image {
+  @media screen and (max-width: 600px) {
+    width: 90%;
+  }
+}
