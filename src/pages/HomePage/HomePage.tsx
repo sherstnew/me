@@ -3,6 +3,7 @@ import { Layout } from '../../components/Layout/Layout';
 import { Landing } from '../../components/Landing/Landing';
 import { About } from '../../components/About/About';
 import { Techs } from '../../components/Techs/Techs';
+import { Projects } from '../../components/Projects/Projects';
 import { More } from '../../components/More/More';
 
 export interface IHomePageProps {
@@ -14,6 +15,7 @@ export function HomePage (props: IHomePageProps) {
       <Landing />
       <About />
       <Techs />
+      <Projects />
       <More />
     </Layout>
   );

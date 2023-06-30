@@ -12,8 +12,6 @@ export function Layout (props: ILayoutProps) {
 
   const { theme } = useContext(ThemeContext);
 
-  console.log(theme);
-
   return (
     <>
       <Header />
