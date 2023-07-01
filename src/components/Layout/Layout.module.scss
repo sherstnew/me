@@ -9,7 +9,7 @@
 }
 
 .container_dark {
-  transition: .5s;
+  transition: background-color .5s, color .5s;
   background-color: #1e1f25;
   color: #fafafa;
 }

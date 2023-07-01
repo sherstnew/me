@@ -1,13 +1,19 @@
-import * as React from 'react';
 import styles from './Header.module.scss';
 import catHomeIcon from '../../static/icons/cathome.webp';
 import * as Scroll from 'react-scroll';
 import burgerIcon from '../../static/icons/burger.svg';
+import { Link } from 'react-scroll';
+import classNames from 'classnames/bind';
+import { useState, useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
+
+const cx = classNames.bind(styles);
 
 export interface IHeaderProps {}
 
 export function Header(props: IHeaderProps) {
-  const [menuOpened, setMenuOpened] = React.useState(false);
+  const [menuOpened, setMenuOpened] = useState(false);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div className={styles.header}>
@@ -21,70 +27,53 @@ export function Header(props: IHeaderProps) {
         }
         onClick={() => setMenuOpened(!menuOpened)}
       />
-      <img
-        src={catHomeIcon}
-        alt='наверх'
-        className={styles.header__home}
-        onClick={() =>
-          Scroll.animateScroll.scrollToTop({
-            duration: 500,
-            smooth: true,
-          })
-        }
-      />
+      <Link to='landing' smooth={true} duration={500}>
+        <img src={catHomeIcon} alt='наверх' className={styles.header__home} />
+      </Link>
       <div
-        className={
-          menuOpened ? styles.menu + ' ' + styles.menu_opened : styles.menu
-        }
+        className={cx([
+          'menu',
+          { menu_opened: menuOpened },
+          { menu_dark: theme === 'dark' },
+        ])}
       >
-        <div
+        <Link
+          to='about'
+          smooth={true}
+          duration={500}
           className={styles.menu__item}
-          onClick={() => {
-            Scroll.scroller.scrollTo('about', {
-              duration: 500,
-              smooth: true,
-            });
-            setMenuOpened(false);
-          }}
+          onClick={() => setMenuOpened(false)}
         >
           Кто я
-        </div>
-        <div
+        </Link>
+        <Link
+          to='techs'
+          smooth={true}
+          duration={500}
           className={styles.menu__item}
-          onClick={() => {
-            Scroll.scroller.scrollTo('techs', {
-              duration: 500,
-              smooth: true,
-            });
-            setMenuOpened(false);
-          }}
+          onClick={() => setMenuOpened(false)}
         >
           Что я знаю
-        </div>
-        <div
+        </Link>
+        <Link
+          to='projects'
+          smooth={true}
+          duration={500}
+          offset={-100}
           className={styles.menu__item}
-          onClick={() => {
-            Scroll.scroller.scrollTo('projects', {
-              duration: 500,
-              smooth: true,
-            });
-            setMenuOpened(false);
-          }}
+          onClick={() => setMenuOpened(false)}
         >
           Проекты
-        </div>
-        <div
+        </Link>
+        <Link
+          to='more'
+          smooth={true}
+          duration={500}
           className={styles.menu__item}
-          onClick={() => {
-            Scroll.scroller.scrollTo('more', {
-              duration: 500,
-              smooth: true,
-            });
-            setMenuOpened(false);
-          }}
+          onClick={() => setMenuOpened(false)}
         >
           Читать далее...
-        </div>
+        </Link>
       </div>
     </div>
   );
