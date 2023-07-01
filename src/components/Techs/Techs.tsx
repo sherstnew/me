@@ -1,6 +1,5 @@
-import * as React from 'react';
 import styles from './Techs.module.scss';
-import reactdenis from '../../static/images/reactdenis.png';
+import reactdenis from '../../static/images/reactdenis.webp';
 
 // techs icons import
 
@@ -20,10 +19,7 @@ import ExpressIcon from '../../static/icons/techs/express-svgrepo-com.svg';
 import MongoDBIcon from '../../static/icons/techs/mongo-svgrepo-com.svg';
 import { Element } from 'react-scroll';
 
-export interface ITechsProps {
-}
-
-export function Techs (props: ITechsProps) {
+export function Techs () {
   return (
     <Element name='techs' className={styles.techsBlock}>
       <ul className={styles.techs}>

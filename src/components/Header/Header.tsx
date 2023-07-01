@@ -1,6 +1,5 @@
 import styles from './Header.module.scss';
 import catHomeIcon from '../../static/icons/cathome.webp';
-import * as Scroll from 'react-scroll';
 import burgerIcon from '../../static/icons/burger.svg';
 import { Link } from 'react-scroll';
 import classNames from 'classnames/bind';

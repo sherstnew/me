@@ -1,12 +1,8 @@
-import * as React from 'react';
 import styles from './About.module.scss';
-import circlescity from '../../static/images/circlescity.png';
+import circlescity from '../../static/images/circlescity.webp';
 import { Element } from 'react-scroll';
 
-export interface IAboutProps {
-}
-
-export function About (props: IAboutProps) {
+export function About () {
   return (
     <Element name='about' className={styles.aboutBlock}>
       <div className={styles.about}>
