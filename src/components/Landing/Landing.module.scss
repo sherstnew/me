@@ -15,7 +15,7 @@
     width: 0px;
   }
   100% {
-    width: 320px;
+    width: 300px;
   }
 }
 
@@ -28,29 +28,36 @@
   width: 100%;
   height: 100vh;
   gap: 20px;
-  background-image: url('../../static/backgrounds/homeBG.svg');
-  background-position: top;
+  background-image: linear-gradient(transparent, #fafafa), url('../../static/backgrounds/main-light.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  transition: .5s;
   @media screen and (max-width: 600px) {
-    background-size: cover;
     margin-bottom: 100px;
-    background-image: url('../../static/backgrounds/homeBGmobile.webp');
   }
-  @media screen and (min-width: 600px) {
-    color: #ffffff;
+  &_dark {
+    background-image: linear-gradient(#1e1f25, rgba(30, 31, 37, .7), #1e1f25), url('../../static/backgrounds/main-dark.jpg');
   }
 }
 
-.secret_opened {
-  background-image: url('../../static/backgrounds/homeBGsecret.svg');
+
+.about {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 50%;
+  @media screen and (max-width: 600px){
+    width: 80%;
+  }
 }
 
 .header {
   width: 100%;
   font-size: 64px;
   font-weight: 500;
-  text-align: center;
+  // text-align: center;
   margin: 0;
   z-index: 1;
   @media screen and (max-width: 600px) {
@@ -61,8 +68,8 @@
 .subheader {
   width: 100%;
   font-weight: 400;
-  font-size: 20px;
-  text-align: center;
+  font-size: 24px;
+  // text-align: center;
   margin: 0;
   z-index: 1;
   @media screen and (max-width: 600px) {
@@ -71,6 +78,8 @@
 }
 
 .level {
+  font-weight: 400;
+  font-size: 20px;
   overflow: hidden;
   text-overflow: clip;
   white-space: nowrap;
@@ -104,5 +113,17 @@
   animation: spinning 5s 0s infinite;
   @media screen and (max-width: 600px) {
     display: none;
+  }
+}
+
+.landing__image {
+  transition: .5s;
+  filter: invert(90%);
+  width: 20%;
+  @media screen and (max-width: 600px){
+    width: 80%;
+  }
+  &_dark {
+    filter: invert(0%);
   }
 }

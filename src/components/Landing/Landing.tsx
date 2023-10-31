@@ -1,25 +1,26 @@
-import * as React from 'react';
 import styles from './Landing.module.scss';
-import catImage from '../../static/images/cat.svg';
-import reactIcon from '../../static/icons/react.svg';
+import landingrect from '../../static/images/landingrect.svg';
 import { Element } from 'react-scroll';
+import { ThemeContext } from '../../context/ThemeContext';
+import { useContext } from 'react';
 
 export interface ILandingProps {
 }
 
 export function Landing (props: ILandingProps) {
 
-  const [secretOpened, setSecretOpened] = React.useState(false);
+  const { theme } = useContext(ThemeContext);
+
+  // const [secretOpened, setSecretOpened] = React.useState(false);
 
   return (
-    <Element name='landing' className={secretOpened ? styles.landing + ' ' + styles.secret_opened : styles.landing}>
-      <h1 className={styles.header}>Денис Шерстнев</h1>
-      <h3 className={styles.subheader}>или же sherstnew</h3>
-      <h3 className={styles.subheader + ' ' + styles.level}>Junior Frontend React Developer</h3>
-      <img src={catImage} alt="кот" className={styles.ambientCat} onClick={() => setSecretOpened(!secretOpened)} />
-      <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-        <img src={reactIcon} alt="реакт" className={styles.ambientReact} />
-      </a>
+    <Element name='landing' className={theme === 'dark' ? styles.landing + ' ' + styles.landing_dark : styles.landing}>
+      <div className={styles.about}>
+        <h1 className={styles.header}>Денис Шерстнев</h1>
+        <h3 className={styles.subheader}>или же sherstnew</h3>
+        <h3 className={styles.level}>Junior Frontend React Developer</h3>
+      </div>
+      <img src={landingrect} alt="" className={theme === 'dark' ? styles.landing__image + ' ' + styles.landing__image_dark : styles.landing__image} />
     </Element>
   );
-}
+};

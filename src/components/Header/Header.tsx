@@ -5,6 +5,7 @@ import { Link } from 'react-scroll';
 import classNames from 'classnames/bind';
 import { useState, useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
+import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 
 const cx = classNames.bind(styles);
 
@@ -74,6 +75,7 @@ export function Header(props: IHeaderProps) {
           Читать далее...
         </Link>
       </div>
+      <ThemeSwitcher />
     </div>
   );
 }
