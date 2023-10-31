@@ -72,7 +72,7 @@ export function Header(props: IHeaderProps) {
           className={styles.menu__item}
           onClick={() => setMenuOpened(false)}
         >
-          Читать далее...
+          Ссылки
         </Link>
       </div>
       <ThemeSwitcher />
